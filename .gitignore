@@ -4,3 +4,6 @@
 # local build scratch
 build-tmp/
 node_modules/
+
+# private working notes (not published)
+notes/
