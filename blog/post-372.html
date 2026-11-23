@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="zh-TW">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>SSL 說明書導讀-Section VI : The Patch | 強力大磁鐵 MEGAFORCE</title>
+	<meta name="description" content="SSL說明書導讀系列已經寫到了第六章，這也是控台硬體介面的最後一章。第六章講的重點在於Patchbay的邏輯和" />
+	<meta property="og:site_name" content="MEGAFORCE 強力錄音室" />
+	<meta property="og:title" content="SSL 說明書導讀-Section VI : The Patch | 強力大磁鐵 MEGAFORCE" />
+	<meta property="og:description" content="SSL說明書導讀系列已經寫到了第六章，這也是控台硬體介面的最後一章。第六章講的重點在於Patchbay的邏輯和" />
+	<meta property="og:type" content="article" />
+	<meta property="og:image" content="http://megaforce.audio/images/blog/2017/10/DSC04334.webp" />
+	<meta property="og:url" content="http://megaforce.audio/blog/post-372.html" />
+	<link rel="canonical" href="http://megaforce.audio/blog/post-372.html" />
+	<link rel="Shortcut Icon" type="image/x-icon" href="../images/megaforce_icon.ico" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=Noto+Sans+TC:wght@300;400;500;700&amp;display=swap" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="../css/megaforce.min.css" type="text/css" />
+	<link rel="stylesheet" href="../css/blog.css" type="text/css" />
+	<!-- Facebook Pixel Code -->
+	<script>
+	!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+	n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+	document,'script','https://connect.facebook.net/en_US/fbevents.js');
+	fbq('init', '117336522215660'); // Insert your pixel ID here.
+	fbq('track', 'PageView');
+	</script>
+	<noscript><img height="1" width="1" style="display:none"
+	src="https://www.facebook.com/tr?id=117336522215660&ev=PageView&noscript=1"
+	/></noscript>
+	<!-- DO NOT MODIFY -->
+	<!-- End Facebook Pixel Code -->
+</head>
+<body class="stretched mf-blog">
+
+	<div id="wrapper" class="clearfix">
+
+		<header id="header" class="full-header">
+
+			<div id="header-wrap">
+
+				<div class="container clearfix">
+
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+					<!-- Logo
+					============================================= -->
+					<div id="logo">
+						<a href="../index.html" class="standard-logo" data-dark-logo="../images/MEGAlogo-dark.png"><img src="../images/MEGAlogo.png" alt="MEGA Logo"></a>
+						<a href="../index.html" class="retina-logo" data-dark-logo="../images/MEGAlogo-dark@2x.png"><img src="../images/MEGAlogo@2x.png" alt="MEGA Logo"></a>
+					</div><!-- #logo end -->
+
+					<!-- Primary Navigation
+					============================================= -->
+					<nav id="primary-menu">
+
+						<ul>
+							<li><a href="https://megaforcetraining.wixsite.com/website"><div>Megalogy</div></a></li>
+							<li><a href="../index.html"><div>Home</div></a></li>
+							<!--<li><a href="../index.html#section-about"><div>About</div></a></li>-->
+							<li><a href="../index.html#section-work"><div>Work</div></a></li>
+							<li><a href="../index.html#section-team"><div>Team</div></a></li>
+							<li><a href="../index.html#section-services"><div>Services</div></a></li>
+							<li><a href="../index.html#section-pricing"><div>Pricing</div></a></li>
+							<!--<li><a href="../index.html#section-testimonials"><div>Testimonials</div></a></li>-->
+							<li><a href="../index.html#section-contact"><div>Contact</div></a></li>
+							<li><a href="../equipment.html"><div>Equipment</div></a></li>
+							<li class="current"><a href="index.html"><div>Blog</div></a></li>
+						</ul>
+
+						<!-- Top Search
+						============================================= -->
+						<!--<div id="top-search">
+							<a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
+							<form action="search.html" method="get">
+								<input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
+							</form>
+						</div>-->
+						<!-- #top-search end -->
+
+
+					</nav><!-- #primary-menu end -->
+
+				</div>
+
+			</div>
+
+		</header><!-- #header end -->
+
+		<section id="page-title" class="mf-page-title">
+			<div class="container clearfix">
+				<a class="mf-back" href="index.html"><i class="icon-angle-left"></i> 強力大磁鐵 Blog</a>
+				<h1>SSL 說明書導讀-Section VI : The Patch</h1>
+				<ul class="mf-meta"><li><i class="icon-calendar3"></i> <time datetime="2017-10-02">2017 年 10 月 2 日</time></li><li><i class="icon-user"></i> Anita</li><li><i class="icon-folder-open"></i> <a href="index.html#cat-9">讀書會系列－SSL 類比控台</a></li></ul>
+			</div>
+		</section>
+
+		<section id="content">
+			<div class="content-wrap">
+				<div class="container clearfix">
+					<article class="mf-post">
+						<div class="mf-post-hero"><img src="../images/blog/2017/10/DSC04334.webp" alt="SSL 說明書導讀-Section VI : The Patch" width="1200" height="800" fetchpriority="high" decoding="async" /></div>
+						<div class="mf-post-body">
+<p><img src="../images/blog/2017/10/DSC04334.webp" alt="" width="1200" height="800" class="aligncenter" loading="lazy" decoding="async" /></p>
+<p>SSL說明書導讀系列已經寫到了第六章，這也是控台硬體介面的最後一章。第六章講的重點在於Patchbay的邏輯和預設設定，錄音室的線要怎麼接，不只是助理的必備技能，每個訊號怎麼走、從哪裡走到哪裡、也是身為一個聲音工作者在過程中必須一直很清楚的事情呢！</p>
+<h3>The Patch</h3>
+<p>The SL 9000 J 系列的配線槽(patchbay)，每個控台安裝至少九組1U高的bantam (TT)配線槽，各有兩排的插孔。</p>
+<p>視控台的I/O模組數量而定，每一列的插孔數量有可能不同。軌道數較多的控台(56軌以上)會將配線槽分成兩欄(例：64軌控台上有兩欄32軌的配線槽，80軌的控台有兩欄40軌的配線槽)。 大部分的控台上都是安裝integral patchbays，不過也可以另外選擇 remote patchbays的版本。Remote patchbay的設計和內部的normalling將會跟同樣大小的integral patchbay一樣。<a href="../images/blog/2017/08/SSL-patchbay.webp"><img src="../images/blog/2017/08/SSL-patchbay.webp" alt="" width="1200" height="986" class="aligncenter" loading="lazy" decoding="async" /></a></p>
+<p>配線槽每一列由一組邏輯配對(logical pair)組成，上方的插孔為輸出孔，下方的為輸入孔。配線槽共有兩種normalling方式：</p>
+<p><strong>HALF-NORMALLED：</strong>上排的插孔為輸出孔。若我們將導線插入上排的插孔，我們可以接收到該孔的輸出，但不會中斷與下排插孔的連接。下排的插孔為輸入孔，導線插入時，會中斷上排送下來的訊號。（見下圖）</p>
+<p><a href="../images/blog/2017/08/SSL-halfnormal.webp"><img src="../images/blog/2017/08/SSL-halfnormal.webp" alt="" width="1200" height="819" class="aligncenter" loading="lazy" decoding="async" /></a><br />
+<strong>FULLY NORMALLED</strong>：上排的inners連接到下排的inners。插入任一插孔的導線都會中斷上下排的連結。</p>
+<p>預設設定只有最上方兩排插孔(Mic Lines和Channel Mic Inputs)是fully normalled，這樣可以避免兩隻麥克風同時插入一個輸入。除了R, S, T 和 U排使用者自定義的插孔外，剩下的插孔預設都是half normalled。額外安裝的配線槽則要視安裝時的設定決定線路的狀況。</p>
+<p><a href="../images/blog/2017/08/SSL-fullnormal.webp"><img src="../images/blog/2017/08/SSL-fullnormal.webp" alt="" width="1200" height="764" class="aligncenter" loading="lazy" decoding="async" /></a></p>
+<p>除了一些例外，A到K排的設定大部分都是和上述說的一樣：</p>
+<p><strong>多軌返送(Multitrack Returns)：</strong>進入控台時訊號會被分送(split)到C和J排。</p>
+<p><strong>Channel Insert Send(E排)</strong>：訊號是持續不中斷的，而F排的Channel Insert Return則是由I/O模組上的insert IN 按鍵切換。這方便我們在可以等設定好連接insert裝置的訊號大小後再打開Channel Insert，同時也讓我們有多一個地方可以轉送各模組的訊號。</p>
+<p><strong>Group output：</strong>位在G排，I/O模組Bus Trim control之後(編按：也就是說bus trim會影響他的輸出訊號)。這些訊號會被normalled到H排。</p>
+<p><strong>H排</strong>：Multitrack Sends (多軌機的輸入)，同時也是GROUP監聽按鈕按下會啟動的聲音軌道。就算Groups被cross patched，GROUP監聽按鈕永遠會都輸出多軌轉送的監聽。</p>
+<p><strong>L-S排</strong>：有些接頭是cross normalled並會在下面的文章說明，包含一些線路不是很直覺明顯的配線槽，也會特別解釋。以下敘述是以48軌配線槽為主，根據自己使用的控台，在K排之後的位置可能會有一些變化，不過不論他們的位置在哪裡，功能和線路都和以下所說是一樣的。</p>
+<p><strong>PRE VCA INS (L1-4, M1-4)</strong> ：位於LCRS匯流擴大機(LCRS bus mix amps)之後和主輸出(Main Output)VCA Fader(含4-channel Compressor)之前的四個插入點(insert points)。 這幾個插入點可以用來插入其他壓縮器/限制器或EQ等處理進入主控台輸出(main desk outputs)的聲音。</p>
+<p><strong>MAIN OUTPUTS + DISTRIBUTION (L5-L9, M5-M9)</strong>：控台的主LCRS和Mono輸出。L5-8輸出主LCRS輸出，並normalled至主LCRS分配插孔(M5-8)。這四個插孔輸出訊號到L11-L40的4-Track和Stereo錄音機(Recorder)插孔。4-Track 1和Stereo 1訊號是直接從M5-8送來; 其他的錄音機訊號都是經過buffered。L11-22的三組4-Track 錄音機輸入源於LCRS輸出(M5-8)。Stereo machine輸入(L23-L40)訊號則是從L和R輸出(M5&amp;M7)來的。四個分配孔(M5-8)可以方便我們使用多軌機上做聲音的複製(multi-machine tape copying)。舉例來說，在M5和M7插入的訊號，將會送到所有連接在M23-40機器的輸入。</p>
+<p><strong>TAPE MACHINES (L, M, N, P 11-40)：</strong>每個錄音機四個插孔。上排(L排)輸出控台的主輸出(main output)，並且normalled到錄音機的Record input(M排)。錄音機回放輸出接在第N排並normalled至外部監聽選擇器(External Monitor Selector)輸入(P排)。P排的訊號方便我們使用指示器輔助作業。舉例來說，將訊號接到P23並選擇EXT 1，這時把主表頭(main meters)選在EXT 1她就會將EXT1的訊號顯示出來。</p>
+<p><strong>STEREO BUS OUTPUTS and INSERT RETURNS (N1-8 and P1-8)</strong>：四個Stereo busses的post main level control輸出/插入(Output/Insert)。若是用來作為外部限制器或EQ的插入點的話，效果會作用在送回主LCRS mix busses前的訊號。 插入返送(Insert Return)插孔(P1-8)將訊號送去外部監聽選擇器(External Monitor Selector 1)同時也送到控台的connector panel，在有需要的時候可以連接額外的layback machine。</p>
+<p><strong>OSC (N9-10 &amp; P9) – </strong>沒錯，震盪器(oscillator)！<br />
+N9輸出震盪器的訊號並normal到P9，控台的震盪器分配系統。震盪器分配系統是被中央區塊的 BUSSES 1-48，ABCD 和MIX 選擇鈕控制。 若有 需 要 的 話 ， 也可 以 連 接外 部的 震 盪 器或粉 紅 噪音 等訊號來源 到 P 9 進 入震盪器分配系統。 N10提供-60dB的震盪器訊號，可以用來檢查麥克風輸入的訊號。</p>
+<p><strong>MONITOR INSERT (L41-44 &amp; M41-44)</strong>：這是一個可以開關的插入點(insert point)，在主監聽音量旋鈕前，設計來連接杜比環繞音效編碼/解碼器(Dolby Surround Encoder/Decoder)。</p>
+<p><strong>MONITOR LS (L45-48 &amp; M45-48) – L45-48</strong>：輸出主監聽輸出(Main monitor outputs)，並normalled至M45-48，連接到主監聽擴大機(Main monitor amps)。</p>
+<h3><strong><em>警告！ 這幾個插孔會將訊號送到喇叭的擴大機，如果不小心插入標準line level訊號可能會把喇叭衝爆，傷害到喇叭和自己的耳朵</em>。</strong></h3>
+<p><strong>MINI A 和 MINI B (N45-48 &amp; P45-48)</strong>：將訊號送到兩對近場監聽的插孔。再次提醒，如果不小心插入標準line level訊號可能會把喇叭衝爆。</p>
+<p><strong>LISTEN MICS (N41-43 and P41-42)</strong>：N41和42應該要連接到兩個掛在錄音間的麥克風。麥克風訊號normalled至P41-42，並輸入到控台的Listen Mic inputs。若有需要，可以在中央區塊控制訊號大小和開關。<br />
+L/MIC OUT(N43)， 提供過壓縮器後(post-compressor)的Listen Mic輸出，這也是一個受到許多SL4000使用者喜愛的聲音。值得注意的是，進入壓縮器的訊號是兩個Listen Mic Inputs的總和，若只想要其中一隻麥克風的聲音，我們要先把另一支麥克風的輸入關掉。</p>
+<p><strong>EXT TB (N44 &amp; P44)</strong>：外接的Talkback。上排訊號為控台內一個可切換的talkback麥克風訊號 ，由SL952上的EXT TB按鍵開啟。下排將此訊號送往一個只有錄音室接線人員知道的地方。(編按：說明書就這樣寫，也不知道是哪裡= =)</p>
+<p><strong>ECHO SENDS (R1-6 &amp; S1-6)</strong>：R1-6是FX Send 1 到 6 的輸出，並且 normalled 到控台的effect send輸出(S1-6)。</p>
+<p><strong>STEREO CUE OUT (R7-12 &amp; S7-12)</strong>：Three parallel outputs of the Cue Stereo Bus的三個平行訊號輸出，normalled到中央區塊耳機輸出F/B A, B and C電路，可切換的STEREO CUE 輸入。</p>
+<p><strong>F/B SENDS (R13-18 &amp; S13-18)</strong>：上面描述到的三個耳機輸出。可以選擇接收Cue Stereo或兩個外部訊源選擇器(External Monitor Selectors)的訊號。上排的訊號 normalled到下排的foldback amp輸入。</p>
+<p><strong>SLS (R19-20 &amp; S19-20)</strong>：錄音間喇叭輸出從這裡normalled至擴大機。小心！</p>
+<p><strong>ECHO RETURNS (R21-28 &amp; S21-28)</strong>：R21-28可以接在Reverb或其他效果器的輸出。R21-28被normalled到四個Stereo Echo Returns的輸入，位置在控台的中央區塊。</p>
+<h6>本說明書版權歸Solid State Logic, Oxford, England所有，中文化僅供技術交流與強力錄音室內部使用，禁止用於商業用途。</h6>
+<p>PDF版：<a href="../files/blog/SL9000J-中文版VI.pdf" target="_blank" rel="noopener">點我下載</a></p>
+<p>上篇：<strong><a href="../files/blog/SL9000J-中文版V.pdf" target="_blank" rel="noopener">SSL 說明書導讀-Section V : The Console Centre Section</a></strong></p>
+						</div>
+						<div class="mf-tags"><i class="icon-tag"></i> <span>Analogue console</span> <span>Mixing</span> <span>Patch</span> <span>Patchbay</span> <span>SSL</span> <span>SSL 9000J</span> <span>SSL console</span> <span>強力錄音室</span> <span>混音</span> <span>配線槽</span> <span>錄音</span></div>
+						<nav class="mf-post-nav"><a class="prev" href="post-539.html"><span>上一篇</span>台灣新世紀音樂創作人及流行鋼琴演奏家一V.K克 專訪（上集）</a><a class="next" href="post-549.html"><span>下一篇</span>台灣新世紀音樂創作人及流行鋼琴演奏家一V.K克 專訪（下集）</a></nav>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<footer id="footer" class="dark" style="background: url('../images/footer-bg.webp') repeat fixed; background-size: 100% 100%;">
+
+			<div class="container">
+
+				<!-- Footer Widgets
+				============================================= -->
+				<div class="footer-widgets-wrap clearfix">
+
+					<!--<div class="col_two_third">-->
+					<div class="container clearfix">
+
+						<div class="widget clearfix">
+
+							<img src="../images/MEGAlogo-footer.png" alt="" class="alignleft" style="margin-top: 8px; padding-right: 18px; border-right: 1px solid #4A4A4A;">
+
+							<p>強力錄音室創立於西元1991年。初期營業內容以錄音為主，對象為國內各家唱片公司。本錄音室有鑑於對錄音品質的要求，特別禮聘國外的一流錄音室設計者：Andy Munro 先生，擔綱新錄音室的設計工作。為了在台灣打造一座符合國際級的錄音及混音工作環境，也按照Munro先生所提出的指定（包含施工 所需要的建材/聆聽系統…等等），全力配合其需要。經過一年的施工，終於在1997年12月15日，執行新錄音室第一次的錄音，從此也開啟國內錄音工業重要的里程碑。</p>
+
+							<div class="line" style="margin: 30px 0;"></div>
+
+							<div class="col_half">
+								<div class="widget clearfix">
+
+									<div class="hidden-xs hidden-sm"><div class="clear" style="padding-top: 10px;"></div></div>
+
+									<div class="col-md-6 bottommargin-sm center">
+										<div class="counter counter-small" style="color: #35BBAA;"><span data-from="50" data-to="846000" data-refresh-interval="80" data-speed="3000" data-comma="true"></span></div>
+										<h5 class="nobottommargin">Total Working Hours</h5>
+									</div>
+
+									<div class="col-md-6 bottommargin-sm center col_last">
+										<div class="counter counter-small" style="color: #2CAACA;"><span data-from="100" data-to="7465" data-refresh-interval="50" data-speed="2000" data-comma="true"></span></div>
+										<h5 class="nobottommargin">Clients Served</h5>
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+					<!--<div class="col_one_third col_last">
+
+						<div class="widget clearfix">
+							<h4>Facebook</h4>
+							<div id="instagram-photos" class="instagram-photos masonry-thumbs col-5" data-user="269801886" data-count="10" data-type="tag">
+								<div class="fb-page" data-href="https://www.facebook.com/megaforcestudios/" data-tabs="timeline" data-width="250" data-height="250" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/megaforcestudios/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/megaforcestudios/">強力錄音室</a></blockquote>
+								</div>
+							</div>
+						</div>
+
+					</div>-->
+
+				</div><!-- .footer-widgets-wrap end -->
+
+			</div>
+
+			<!-- Copyrights
+			============================================= -->
+			<div id="copyrights">
+
+				<div class="container clearfix">
+
+					<div class="col_half">
+						<!--<div class="copyrights-menu copyright-links clearfix">
+							<a href="#">Home</a>/<a href="#">About</a>/<a href="#">Features</a>/<a href="#">Portfolio</a>/<a href="#">FAQs</a>/<a href="#">Contact</a>
+						</div>-->
+						Copyrights &copy; 2017 All Rights Reserved by Mega Force Co., Ltd.
+					</div>
+
+					<!--<div class="col_half col_last tright">
+						<div class="fright clearfix">
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-facebook">
+								<i class="icon-facebook"></i>
+								<i class="icon-facebook"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-twitter">
+								<i class="icon-"></i>
+								<i class="icon-twitter"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-gplus">
+								<i class="icon-gplus"></i>
+								<i class="icon-gplus"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-pinterest">
+								<i class="icon-pinterest"></i>
+								<i class="icon-pinterest"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-vimeo">
+								<i class="icon-vimeo"></i>
+								<i class="icon-vimeo"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-github">
+								<i class="icon-github"></i>
+								<i class="icon-github"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-yahoo">
+								<i class="icon-yahoo"></i>
+								<i class="icon-yahoo"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-linkedin">
+								<i class="icon-linkedin"></i>
+								<i class="icon-linkedin"></i>
+							</a>
+						</div>
+					</div>-->
+
+				</div>
+
+			</div><!-- #copyrights end -->
+
+		</footer><!-- #footer end -->
+
+	</div><!-- #wrapper end -->
+
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<script src="../js/megaforce.min.js"></script>
+	<script src="../js/blog.js"></script>
+</body>
+</html>

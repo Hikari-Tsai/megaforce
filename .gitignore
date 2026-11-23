@@ -1,0 +1,6 @@
+# macOS
+.DS_Store
+
+# local build scratch
+build-tmp/
+node_modules/

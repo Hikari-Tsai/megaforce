@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="zh-TW">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>SSL 說明書導讀-Section IV: Signal Processor Routing | 強力大磁鐵 MEGAFORCE</title>
+	<meta name="description" content="第四章節主講訊號處理器的訊號流。 這一章節稍微改變了一下呈現的方式，原文列舉了幾乎所有訊號處理器的串接方式，除" />
+	<meta property="og:site_name" content="MEGAFORCE 強力錄音室" />
+	<meta property="og:title" content="SSL 說明書導讀-Section IV: Signal Processor Routing | 強力大磁鐵 MEGAFORCE" />
+	<meta property="og:description" content="第四章節主講訊號處理器的訊號流。 這一章節稍微改變了一下呈現的方式，原文列舉了幾乎所有訊號處理器的串接方式，除" />
+	<meta property="og:type" content="article" />
+	<meta property="og:image" content="http://megaforce.audio/images/blog/2017/09/螢幕快照-2017-09-18-下午10.04.13.webp" />
+	<meta property="og:url" content="http://megaforce.audio/blog/post-388.html" />
+	<link rel="canonical" href="http://megaforce.audio/blog/post-388.html" />
+	<link rel="Shortcut Icon" type="image/x-icon" href="../images/megaforce_icon.ico" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=Noto+Sans+TC:wght@300;400;500;700&amp;display=swap" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="../css/megaforce.min.css" type="text/css" />
+	<link rel="stylesheet" href="../css/blog.css" type="text/css" />
+	<!-- Facebook Pixel Code -->
+	<script>
+	!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+	n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+	document,'script','https://connect.facebook.net/en_US/fbevents.js');
+	fbq('init', '117336522215660'); // Insert your pixel ID here.
+	fbq('track', 'PageView');
+	</script>
+	<noscript><img height="1" width="1" style="display:none"
+	src="https://www.facebook.com/tr?id=117336522215660&ev=PageView&noscript=1"
+	/></noscript>
+	<!-- DO NOT MODIFY -->
+	<!-- End Facebook Pixel Code -->
+</head>
+<body class="stretched mf-blog">
+
+	<div id="wrapper" class="clearfix">
+
+		<header id="header" class="full-header">
+
+			<div id="header-wrap">
+
+				<div class="container clearfix">
+
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+					<!-- Logo
+					============================================= -->
+					<div id="logo">
+						<a href="../index.html" class="standard-logo" data-dark-logo="../images/MEGAlogo-dark.png"><img src="../images/MEGAlogo.png" alt="MEGA Logo"></a>
+						<a href="../index.html" class="retina-logo" data-dark-logo="../images/MEGAlogo-dark@2x.png"><img src="../images/MEGAlogo@2x.png" alt="MEGA Logo"></a>
+					</div><!-- #logo end -->
+
+					<!-- Primary Navigation
+					============================================= -->
+					<nav id="primary-menu">
+
+						<ul>
+							<li><a href="https://megaforcetraining.wixsite.com/website"><div>Megalogy</div></a></li>
+							<li><a href="../index.html"><div>Home</div></a></li>
+							<!--<li><a href="../index.html#section-about"><div>About</div></a></li>-->
+							<li><a href="../index.html#section-work"><div>Work</div></a></li>
+							<li><a href="../index.html#section-team"><div>Team</div></a></li>
+							<li><a href="../index.html#section-services"><div>Services</div></a></li>
+							<li><a href="../index.html#section-pricing"><div>Pricing</div></a></li>
+							<!--<li><a href="../index.html#section-testimonials"><div>Testimonials</div></a></li>-->
+							<li><a href="../index.html#section-contact"><div>Contact</div></a></li>
+							<li><a href="../equipment.html"><div>Equipment</div></a></li>
+							<li class="current"><a href="index.html"><div>Blog</div></a></li>
+						</ul>
+
+						<!-- Top Search
+						============================================= -->
+						<!--<div id="top-search">
+							<a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
+							<form action="search.html" method="get">
+								<input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
+							</form>
+						</div>-->
+						<!-- #top-search end -->
+
+
+					</nav><!-- #primary-menu end -->
+
+				</div>
+
+			</div>
+
+		</header><!-- #header end -->
+
+		<section id="page-title" class="mf-page-title">
+			<div class="container clearfix">
+				<a class="mf-back" href="index.html"><i class="icon-angle-left"></i> 強力大磁鐵 Blog</a>
+				<h1>SSL 說明書導讀-Section IV: Signal Processor Routing</h1>
+				<ul class="mf-meta"><li><i class="icon-calendar3"></i> <time datetime="2017-09-18">2017 年 9 月 18 日</time></li><li><i class="icon-user"></i> 萬磁王大磁鐵</li><li><i class="icon-folder-open"></i> <a href="index.html#cat-9">讀書會系列－SSL 類比控台</a></li></ul>
+			</div>
+		</section>
+
+		<section id="content">
+			<div class="content-wrap">
+				<div class="container clearfix">
+					<article class="mf-post">
+						<div class="mf-post-hero"><img src="../images/blog/2017/09/螢幕快照-2017-09-18-下午10.04.13.webp" alt="SSL 說明書導讀-Section IV: Signal Processor Routing" width="1008" height="476" fetchpriority="high" decoding="async" /></div>
+						<div class="mf-post-body">
+<p>第四章節主講訊號處理器的訊號流。</p>
+<p>這一章節稍微改變了一下呈現的方式，原文列舉了幾乎所有訊號處理器的串接方式，除了理解控台內部的線路邏輯，也可做為實際工作前準備的參考，為了使各位讀者閱讀和收藏方便，我們以pdf的格式上傳上來，也將慢慢補上前面幾篇的pdf檔案。請直接點擊以下連結下載中文說明書導讀</p>
+<p><span>本說明書版權歸Solid State Logic, Oxford, England所有，中文化僅供技術交流與強力錄音室內部使用，禁止用於商業用途。</span></p>
+<p>PDF版：<a href="../files/blog/SL9000J-中文版IV.pdf" target="_blank" rel="noopener">點我下載</a></p>
+<p>上篇：<a href="post-486.html">SSL說明書導讀-Section III: The SL911 Input/Output Module</a>(下)</p>
+<p>下篇：SSL 說明書導讀-Section V: （敬請期待）</p>
+						</div>
+						
+						<nav class="mf-post-nav"><a class="prev" href="post-486.html"><span>上一篇</span>SSL說明書導讀-Section III: The SL911 Input/Output Module(下)</a><a class="next" href="post-530.html"><span>下一篇</span>「音樂對我來說，就是證明自己的方式。」- R&amp;B/嘻哈音樂製作人 剃刀蔣 Razor Chiang 專訪</a></nav>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<footer id="footer" class="dark" style="background: url('../images/footer-bg.webp') repeat fixed; background-size: 100% 100%;">
+
+			<div class="container">
+
+				<!-- Footer Widgets
+				============================================= -->
+				<div class="footer-widgets-wrap clearfix">
+
+					<!--<div class="col_two_third">-->
+					<div class="container clearfix">
+
+						<div class="widget clearfix">
+
+							<img src="../images/MEGAlogo-footer.png" alt="" class="alignleft" style="margin-top: 8px; padding-right: 18px; border-right: 1px solid #4A4A4A;">
+
+							<p>強力錄音室創立於西元1991年。初期營業內容以錄音為主，對象為國內各家唱片公司。本錄音室有鑑於對錄音品質的要求，特別禮聘國外的一流錄音室設計者：Andy Munro 先生，擔綱新錄音室的設計工作。為了在台灣打造一座符合國際級的錄音及混音工作環境，也按照Munro先生所提出的指定（包含施工 所需要的建材/聆聽系統…等等），全力配合其需要。經過一年的施工，終於在1997年12月15日，執行新錄音室第一次的錄音，從此也開啟國內錄音工業重要的里程碑。</p>
+
+							<div class="line" style="margin: 30px 0;"></div>
+
+							<div class="col_half">
+								<div class="widget clearfix">
+
+									<div class="hidden-xs hidden-sm"><div class="clear" style="padding-top: 10px;"></div></div>
+
+									<div class="col-md-6 bottommargin-sm center">
+										<div class="counter counter-small" style="color: #35BBAA;"><span data-from="50" data-to="846000" data-refresh-interval="80" data-speed="3000" data-comma="true"></span></div>
+										<h5 class="nobottommargin">Total Working Hours</h5>
+									</div>
+
+									<div class="col-md-6 bottommargin-sm center col_last">
+										<div class="counter counter-small" style="color: #2CAACA;"><span data-from="100" data-to="7465" data-refresh-interval="50" data-speed="2000" data-comma="true"></span></div>
+										<h5 class="nobottommargin">Clients Served</h5>
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+					<!--<div class="col_one_third col_last">
+
+						<div class="widget clearfix">
+							<h4>Facebook</h4>
+							<div id="instagram-photos" class="instagram-photos masonry-thumbs col-5" data-user="269801886" data-count="10" data-type="tag">
+								<div class="fb-page" data-href="https://www.facebook.com/megaforcestudios/" data-tabs="timeline" data-width="250" data-height="250" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/megaforcestudios/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/megaforcestudios/">強力錄音室</a></blockquote>
+								</div>
+							</div>
+						</div>
+
+					</div>-->
+
+				</div><!-- .footer-widgets-wrap end -->
+
+			</div>
+
+			<!-- Copyrights
+			============================================= -->
+			<div id="copyrights">
+
+				<div class="container clearfix">
+
+					<div class="col_half">
+						<!--<div class="copyrights-menu copyright-links clearfix">
+							<a href="#">Home</a>/<a href="#">About</a>/<a href="#">Features</a>/<a href="#">Portfolio</a>/<a href="#">FAQs</a>/<a href="#">Contact</a>
+						</div>-->
+						Copyrights &copy; 2017 All Rights Reserved by Mega Force Co., Ltd.
+					</div>
+
+					<!--<div class="col_half col_last tright">
+						<div class="fright clearfix">
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-facebook">
+								<i class="icon-facebook"></i>
+								<i class="icon-facebook"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-twitter">
+								<i class="icon-"></i>
+								<i class="icon-twitter"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-gplus">
+								<i class="icon-gplus"></i>
+								<i class="icon-gplus"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-pinterest">
+								<i class="icon-pinterest"></i>
+								<i class="icon-pinterest"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-vimeo">
+								<i class="icon-vimeo"></i>
+								<i class="icon-vimeo"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-github">
+								<i class="icon-github"></i>
+								<i class="icon-github"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-yahoo">
+								<i class="icon-yahoo"></i>
+								<i class="icon-yahoo"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-linkedin">
+								<i class="icon-linkedin"></i>
+								<i class="icon-linkedin"></i>
+							</a>
+						</div>
+					</div>-->
+
+				</div>
+
+			</div><!-- #copyrights end -->
+
+		</footer><!-- #footer end -->
+
+	</div><!-- #wrapper end -->
+
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<script src="../js/megaforce.min.js"></script>
+	<script src="../js/blog.js"></script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="zh-TW">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>SSL說明書導讀-Section II: Basic Routing and Signal Flow （上）錄音篇 | 強力大磁鐵 MEGAFORCE</title>
+	<meta name="description" content="Basic Routing and Signal Flow 基本路由與訊號流 了解控台的訊號流，或許先藉由了解" />
+	<meta property="og:site_name" content="MEGAFORCE 強力錄音室" />
+	<meta property="og:title" content="SSL說明書導讀-Section II: Basic Routing and Signal Flow （上）錄音篇 | 強力大磁鐵 MEGAFORCE" />
+	<meta property="og:description" content="Basic Routing and Signal Flow 基本路由與訊號流 了解控台的訊號流，或許先藉由了解" />
+	<meta property="og:type" content="article" />
+	<meta property="og:image" content="http://megaforce.audio/images/blog/2017/08/Record-Status-Circuit.webp" />
+	<meta property="og:url" content="http://megaforce.audio/blog/post-218.html" />
+	<link rel="canonical" href="http://megaforce.audio/blog/post-218.html" />
+	<link rel="Shortcut Icon" type="image/x-icon" href="../images/megaforce_icon.ico" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=Noto+Sans+TC:wght@300;400;500;700&amp;display=swap" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="../css/megaforce.min.css" type="text/css" />
+	<link rel="stylesheet" href="../css/blog.css" type="text/css" />
+	<!-- Facebook Pixel Code -->
+	<script>
+	!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+	n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+	document,'script','https://connect.facebook.net/en_US/fbevents.js');
+	fbq('init', '117336522215660'); // Insert your pixel ID here.
+	fbq('track', 'PageView');
+	</script>
+	<noscript><img height="1" width="1" style="display:none"
+	src="https://www.facebook.com/tr?id=117336522215660&ev=PageView&noscript=1"
+	/></noscript>
+	<!-- DO NOT MODIFY -->
+	<!-- End Facebook Pixel Code -->
+</head>
+<body class="stretched mf-blog">
+
+	<div id="wrapper" class="clearfix">
+
+		<header id="header" class="full-header">
+
+			<div id="header-wrap">
+
+				<div class="container clearfix">
+
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+					<!-- Logo
+					============================================= -->
+					<div id="logo">
+						<a href="../index.html" class="standard-logo" data-dark-logo="../images/MEGAlogo-dark.png"><img src="../images/MEGAlogo.png" alt="MEGA Logo"></a>
+						<a href="../index.html" class="retina-logo" data-dark-logo="../images/MEGAlogo-dark@2x.png"><img src="../images/MEGAlogo@2x.png" alt="MEGA Logo"></a>
+					</div><!-- #logo end -->
+
+					<!-- Primary Navigation
+					============================================= -->
+					<nav id="primary-menu">
+
+						<ul>
+							<li><a href="https://megaforcetraining.wixsite.com/website"><div>Megalogy</div></a></li>
+							<li><a href="../index.html"><div>Home</div></a></li>
+							<!--<li><a href="../index.html#section-about"><div>About</div></a></li>-->
+							<li><a href="../index.html#section-work"><div>Work</div></a></li>
+							<li><a href="../index.html#section-team"><div>Team</div></a></li>
+							<li><a href="../index.html#section-services"><div>Services</div></a></li>
+							<li><a href="../index.html#section-pricing"><div>Pricing</div></a></li>
+							<!--<li><a href="../index.html#section-testimonials"><div>Testimonials</div></a></li>-->
+							<li><a href="../index.html#section-contact"><div>Contact</div></a></li>
+							<li><a href="../equipment.html"><div>Equipment</div></a></li>
+							<li class="current"><a href="index.html"><div>Blog</div></a></li>
+						</ul>
+
+						<!-- Top Search
+						============================================= -->
+						<!--<div id="top-search">
+							<a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
+							<form action="search.html" method="get">
+								<input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
+							</form>
+						</div>-->
+						<!-- #top-search end -->
+
+
+					</nav><!-- #primary-menu end -->
+
+				</div>
+
+			</div>
+
+		</header><!-- #header end -->
+
+		<section id="page-title" class="mf-page-title">
+			<div class="container clearfix">
+				<a class="mf-back" href="index.html"><i class="icon-angle-left"></i> 強力大磁鐵 Blog</a>
+				<h1>SSL說明書導讀-Section II: Basic Routing and Signal Flow （上）錄音篇</h1>
+				<ul class="mf-meta"><li><i class="icon-calendar3"></i> <time datetime="2017-08-14">2017 年 8 月 14 日</time></li><li><i class="icon-user"></i> P</li><li><i class="icon-folder-open"></i> <a href="index.html#cat-9">讀書會系列－SSL 類比控台</a></li></ul>
+			</div>
+		</section>
+
+		<section id="content">
+			<div class="content-wrap">
+				<div class="container clearfix">
+					<article class="mf-post">
+						<div class="mf-post-hero"><img src="../images/blog/2017/08/Record-Status-Circuit.webp" alt="SSL說明書導讀-Section II: Basic Routing and Signal Flow （上）錄音篇" width="1200" height="558" fetchpriority="high" decoding="async" /></div>
+						<div class="mf-post-body">
+<h2>Basic Routing and Signal Flow 基本路由與訊號流</h2>
+<p>了解控台的訊號流，或許先藉由了解Status來開始是個最好的方法，Status在主控區內，這些按鈕定義了SL911J I/O模組的基礎訊號流，所以他是非常重要的。</p>
+<p><img src="../images/blog/2017/08/螢幕快照-2017-08-02-下午3.53.44.webp" alt="" width="478" height="236" class="aligncenter" loading="lazy" decoding="async" /></p>
+<p>SL9000J預設有</p>
+<ul>
+<li>Record,</li>
+<li>Replay,</li>
+<li>Mix,</li>
+<li>Record + Mix (Overdub)</li>
+</ul>
+<p>以上四種模式，而Small Fader to Mon(itor)和Master Input Flip 也會影響到I/O模組的訊號流。<br />
+每個模組的底下都會有兩條完全獨立的聲音訊號路徑，分別為 Channel Path通道路徑和Monitor Path監聽路徑。</p>
+<h3>The Six Key Points in the SL911J   SL911J六個關鍵點</h3>
+<p>定義這兩條路徑的關鍵在於兩個Inputs、兩個Faders，和兩個Outputs。狀態模式定義了這幾個關鍵點的連結狀況，也決定了訊號的走向。</p>
+<h4>The Channel Input<br />
+<img src="../images/blog/2017/08/螢幕快照-2017-08-07-上午11.32.57.webp" alt="" width="720" height="1100" class="alignright" loading="lazy" decoding="async" /></h4>
+<p>輸入訊號(Input)的選擇可以在模組的最上方找到，共有三種input, Mic, Line和Subgroup。FLIP鈕切換Mic/Line訊號，若需同時切換所有input，可以使用MASTER INPUT FLIP(一次切換所有的Input），省去每一軌都切換一次的麻煩。其他部分在第三節會再詳細介紹。</p>
+<h4>The Small Fader and Pan<br />
+<img src="../images/blog/2017/08/The-Small-Fader-and-Pan.webp" alt="" width="372" height="1008" class="alignleft" loading="lazy" decoding="async" /></h4>
+<p>The Small Fader連接到電腦的自動化控制系統(Automation)。 他的Pan旋鈕位於右上方，通常控制聲音在左右喇叭（或基數偶數通道）之間的定位，若另外開啟LCR panning，則可以將輸出定位在額外的中置喇叭上。</p>
+<h4>The Routing Matrix</h4>
+<p><img src="../images/blog/2017/08/The-Routing-Matrix.webp" alt="" width="372" height="1220" class="alignright" loading="lazy" decoding="async" /></p>
+<p>The Routing Matrix提供了48軌Multitrack通道和4組Stereo subgroup通道。 要選擇Bus輸出也是非常簡單，只要按下1/24 或是25/48就能路由訊號到1-24或25-48。（編按：如果你兩個一起按則會兩個群組都一起送，例如1/24, 25/48都按，再按下5/29，則訊號會輸出到Multirack 5以及29)</p>
+<p>Multitrack 以及Stereo Subgroup Buses可以藉由按下按鈕來自行定義訊號路由，不過預設訊號源是來自於大小fader (依照Status決定)，但需要注意預設的訊號源是可以被局部設定所覆蓋。</p>
+<p>Stereo subgroup的訊號源是獨立於Master Status的，可以依照工作需求設定。這在後面會有更詳細說明。</p>
+<h4>The Monitor Input Section 監聽訊號選擇</h4>
+<p><img src="../images/blog/2017/08/The-Monitor-Input-Section.webp" alt="" width="368" height="334" class="alignleft" loading="lazy" decoding="async" /></p>
+<p>監聽路徑共有兩種來源可以選擇。GROUP選擇該模組的Group Output，也就是送去給Multitrack的訊號(編按：Patch H行的訊號，如果沒插線，則訊號直接來自G行，也就是上面的Routing Matrix作為來源。TAPE則是選擇多軌盤帶機的Output訊號(編按：也就是來自於K行，如果沒有插線，則訊號直接來自J行，按照一般接法，C行與J行的訊號都是接在盤帶機的輸出上，也就是現今的Pro Tools的Output A1-A48上)。同時按下兩顆按鈕，則兩個訊號會混合並同時進入監聽路徑。在第三節時會有更詳細的介紹。<a href="../images/blog/2017/08/9000JPatchbay.webp">(點我看Patchbay)</a></p>
+<h4>The Large Fader and Pan</h4>
+<p><img src="../images/blog/2017/08/The-Large-Fader-and-Pan.webp" alt="" width="358" height="1232" class="alignleft" loading="lazy" decoding="async" /></p>
+<p><img src="../images/blog/2017/08/The-Large-Fader-and-Pan-II.webp" alt="" width="346" height="1514" class="alignleft" loading="lazy" decoding="async" /></p>
+<p>The Large Fader（右圖）同樣也連接到電腦的自動化控制系統(Automation)。Large Faders經過指定而被控台中央的八個Group Fader所控制。</p>
+<p>大Fader對應的Pan旋鈕在上方模組的底部。和Small Fader一樣，通常控制聲音在左右喇叭（或基數偶數通道）之間的定位，若另外開啟LCR panning，則可以將輸出定位在額外的中置喇叭上。</p>
+<h4>The Output to Mix Bus Controls</h4>
+<p>LF MIX和SF MIX兩個按鈕可以定義大Fader或小Fader何者的訊號輸出至主混音匯流排(Main Mix Bus)。<br />
+通常這些設定是由Master Status預設決定，但可以根據工作需求另外於各個軌道設定並且覆蓋掉預設值。</p>
+<p>PRE LF和POST LF按鈕主要都是在混音時使用，可以決定送額外Aux或FX send時，訊號是來自於Pre或Post Large Fader。</p>
+<p>為了解釋控台路由系統，我們將從基礎軌道設定到最終混音的方式來探討主控狀態(Master Statuses)，狀態按鈕針對錄音的不同狀態而進行設計的。</p>
+<h3>錄音模式(Record Status)</h3>
+<p><img src="../images/blog/2017/08/Record-Status.webp" alt="" width="740" height="376" class="aligncenter" loading="lazy" decoding="async" /></p>
+<p><img src="../images/blog/2017/08/Record-Status-Routing.webp" alt="" width="1200" height="566" class="aligncenter" loading="lazy" decoding="async" /></p>
+<p>這是大多數工程師偏好的錄音模式。如果你曾用過SL4000系統的話，SL9000其實等於SL4000的RECORD按鈕加上 VCA to MONITORS按鈕 (Ultimaion和G+系列，這個按鈕叫做FADER REVERSE)。</p>
+<p>在錄音模式下，Large Faders用來當作Monitor Faders時會有更多的用途，比如在工作結束後利用自動化控制(Automation)做Monitor mixes。</p>
+<p>畫面上排的部分顯示的是通道路徑(Channel Path)，而下排是監聽路徑(Monitor Path)。通道路徑的訊號是從控台的I/O模組中的通道區輸入端進來的，而監聽路徑則是從監聽輸入區來。</p>
+<p class="center"><a href="../images/blog/2017/08/Record-Status-Circuit.webp"><img src="../images/blog/2017/08/Record-Status-Circuit.webp" alt="" width="1200" height="558" class="aligncenter" loading="lazy" decoding="async" />(點我可看大圖)</a></p>
+<p>上圖標示了更詳細的錄音模式訊號路徑，它可以提供我們更好的訊號流概念。</p>
+<p><img src="../images/blog/2017/08/未命名-1-1.webp" alt="" width="1105" height="384" class="aligncenter" loading="lazy" decoding="async" /></p>
+<p>圖上都是以單一線條表示訊號路徑，代表單聲道和雙聲道訊號都是用一樣的路徑在走。特別注意的是，從Pan旋鈕出來的訊號永遠都是雙聲道，影響範圍包括Subgroup Buss、main Mix bus 和Monitoring system。</p>
+<h4>Record Signal Flow Diagram</h4>
+<p>上上一張圖是控台訊號路徑的基礎，十分值得花上一些時間仔細研讀。在這個模式下，標準的輸入源是Mic input，FLIP鈕可以使Mic和Line input的選擇對換，這在訊號來源強度為Line Level的時候很方便。不過<strong>SUB GP</strong> (Subgroup)按鈕將覆蓋過Mic 和Line的選擇。當Subgroup鈕沒有按下去的時候，Mic signal會流向相位反轉電路（Phase Reverse circuit, 圖中未標示），如果按下SUB GP 的話，該通道訊號路徑會自動把訊號來源改成模組多軌匯流排(multitrack bus (group) mix amp)。這允許其他模組的訊號可以經由通道達到次群組化。這項功能在混音時非常好用。在錄音模式時，可能可以用來統一處理存進multitrack前所有軌道的動態或EQ。在後面和第三節的時候我們會更詳細的介紹此功能。</p>
+<p>在經過Input之後，訊號繼續走向EQ和動態處理器（有開啟的話），最後來到Small Fader。通道訊號也可以insert來使用外部機器的聲音，insert的位置可以選擇Pre或Post EQ。</p>
+<p>再來，預設情況下選擇SF按鈕，聲音經過Small Fader和它的Pan旋鈕，被送到Multitrack Routing Matrix。當我們在錄製Stereo聲音時，Small Fader pan鈕可以把訊號的定位分配在奇數和偶數的multitrack busses。</p>
+<p>通道訊號經由從Routing Matrix繼續傳送到多軌匯流排(Multitrack busses)，最後被bus mix amp獲得，而Bus Mix Amp直接關聯到多軌匯流排/群組(Multitrack bus/Group)，如果訊號有被換到其他軌道（大部分的情況下都會），該Bus trim會在其他軌道上，訊號會繼續傳遞（從FADER 按鈕）到Patchbay上第G排(Normalled)的Group Output上，然後G排的訊號可以直接多軌轉送(編按：G排插Patch送到盤帶機或是Protools)並且被重新返回H排的Group monitor input(編按：因為是Half-Normaled，所以內部還是會Return)。多軌回送(Multitrack return)則會在J排out(編按：指的是盤帶機或是Protools的OUT)，然後訊號會重新返回到Tape Monitor Input（第K排）(編按：因為是Half-Normaled，所以內部還是會Return)。</p>
+<p>Tape和Group Monitor的訊號的訊號會後由GROUP和TAPE兩個按鈕控制（第三節會詳細介紹），如果在Master Status選擇了MASTER GROUP READY，則所有Monitor的訊號都會自動走到GROUP。通常在一次錄製多軌錄音的時後，這是一個很好的起步設定。</p>
+<p>如果有需要的話，Monitor訊號也可以使用EQ和Dynamics做處理，訊號經過處理器後走到Large Fader然後到Monitor Amp和ATRs。</p>
+<p>記住，在RECORD狀態的預設設定下，Large Faders是Multitrack send 和 return的監聽有關，Small Faders是跟送進去通道的訊號有關。這兩個路徑的訊號有可能完全不一樣，例如：Track 7(Multitrack上)的訊號可能來自於Mic in到Channel 1(Console上)的聲音。這時在Channel 1上的Small Fader控制的是送進Track 7的訊號大小，在Channel 7上的Large Fader控制的是Track 7 send 和return到喇叭的訊號大小。</p>
+<p>類比的多軌盤帶機輸出訊號規定必須可以輸出同步自動化訊號(在RECORD模式底下)。但這要看大家錄音室裡面是否有這樣處理。</p>
+<p>從訊號路線圖可以看到，如果需要的話，Large或Small Fader Pan的輸出可以任意的指派到其中一個或幾個Stereo Subgroups裡面。如果有需要把訊號匯集到Subgroup，方便一次做處理的話，可以利用Stereo subgroup串接外部處理器或其他閒置的I/O模組。如果需要更方便的訊號控制，可以把Monitor Fader(RECORD模式是Large Fader)指派給中間的八軌Group control Faders。</p>
+<h4>Track Bouncing</h4>
+<p>如果你有使用過SL4000的控台，你應該會很熟悉它的FLOAT功能。在眾多用途之下，這是一個為Track Bouncing做Setting的簡易方法。在SL9000只要控制另外兩個按鈕就可以了。</p>
+<p>例如：我們在RECORD模式下要把Channel 1 2 3 4 bounce成一組Stereo聲音到Track 7, 8。先藉由按下LF按鈕以指派Channel 1, 2, 3, 4的大fader訊號到路由矩陣(routing Matrix)(其中觸發是伴隨SF按鈕)，在這些模組需選擇路由按鈕7與8(當然你的1/24要按下去)</p>
+<p>這時，我們必須把LF MIX取消按壓，避免在Bounce的過程「雙重監聽」。選擇Channel 7, 8的GROUP並把這兩軌的Large Fader Pan調整極左極右，最後調整至Unity Gain。</p>
+<p>開始播放並在Large(Monitor) Fader上調整Channel 1-4的平衡，上面的Pan旋鈕也可以幫助調整到需要的Stereo Image。</p>
+<p>對於有經驗的使用者來說，這樣的設定可能有點過於複雜麻煩，不過，跟SL4000系列不一樣的地方是，Bouncing的時候Small Faders都還是可以自由使用的，而送到Multitrack裡面的定位都是由Larger Fader所控制。想想看，當Small Fader和Larger Fader在任何情況下都可以自由使用時的潛力有多少可能。</p>
+<h4>Record+Small Fader To Monitor</h4>
+<p>RECORD + SMALL FADER TO MON(ITOR) 提供了除了基本錄音模式外另一個替代的錄音方式。選擇 SMALL FADER TO MON單純是把Channel和Monitor路徑的Faders對調，在RECORD和REPLAY模式下都可以一起使用。</p>
+<p><img src="../images/blog/2017/08/RECORD-SMALL-FADER-TO-MONITOR.webp" alt="" width="1200" height="599" class="aligncenter" loading="lazy" decoding="async" /></p>
+<p><img src="../images/blog/2017/08/RECORD-SMALL-FADER-TO-MONITOR-II.webp" alt="" width="1200" height="563" class="aligncenter" loading="lazy" decoding="async" /></p>
+<p>在這個模式下，Mic input訊號是走到Large Fader 和Pan 之後進到Multitrack Routing Matrix (Channel path)然後再從Group mix amp和關聯到該軌的Trim control到Multitrack裡面(例如：Track 7的訊號是從 Module 7的 Group Output出來的)。</p>
+<p>Small Faders 則是控制Multitrack的send (GROUP)和Returns (TAPE) 之後再經過模組的Small Fader Pan (Monitor path), Mix busses 和SL952J (控台中央的模組)把訊號送到main Mix 和Monitor。同樣的，Track 7的Monitor是由Module 7的Small Fader控制。</p>
+<p>當有需要同時掌握大量訊號時，這樣的工作方式特別適合想要Fader控制離自己越近越好的工程師。</p>
+<p>有些控台可能會有個別的SMALL FADER TO MON 按鈕，比如選擇只把Channels 25-48切換成這種模式。 在這些軌道上的Large Faders 就可以被拿來作為input faders，而Channels 1-24的Large Faders 可以做為Monitor faders。 可以特別注意，在MIX 模式下，SMALL FADER TO MON是沒有效果的。</p>
+<h3>Master Input Flip</h3>
+<p>這顆按鈕在任何狀態下都可以使用，他很單純的同時切換所有Channel inputs成Mic/Line inputs。個別軌道也能單獨被切換，但能按下MASTER INPUT FLIP來選擇大部分的Input是一個很方便的功能。比如，當你在RECORD模式下要錄製合成器或取樣機訊號而非麥克風訊號時，就可以使用這個按鈕。</p>
+<h3>Replay Status</h3>
+<p>這個模式在RECORD 或RECORD + SMALL FADER TO MON時會被用到。 這個狀態的控台的情況是隨時「待命」，tape returns會自動被設定到Monitor faders。 這讓我們能夠很快速的回放盤帶但又不用去更動到控台的設定。如果Sync/Replay 選項有被設定好，一個類比的Multitrack machine就會被切換到norman Replay。</p>
+<p>這個狀態很適合拿來鋪軌道使用。例如：當在RECORD模式工作時，總會有需要製作簡單快速Monitor Mix的時候。 這在RECORD模式底下可以經由取消選擇任何GROUP按鈕，手動的回放multitrack機器，再使用在stereo ATR上的main output busses來為monitor inputs混音。這些工作REPLAY模式底下只要一個鍵就可以完成。任何GROUP選擇都暫時失去效用，Monitor inputs接收從Replay head來的Multitrack returns。</p>
+<p>重選RECORD模式將會恢復所有先前的GROUP和TAPE按鈕的設定，類比的Multitrack也會切換回同步模式，準備質性更多錄音。</p>
+<p>對於在錄音室回放來說，REPLAY模式也是一個方便的模式，因為RECORD模式會讓SLS output無法接受訊號。</p>
+<p><span>本說明書版權歸Solid State Logic, Oxford, England所有，中文化僅供技術交流與強力錄音室內部使用，禁止用於商業用途。</span></p>
+<p>PDF版：<a href="../files/blog/SL9000J-中文版II-i.pdf" target="_blank" rel="noopener">點我下載</a></p>
+<p>上一篇：<a href="post-185.html">SSL說明書導讀-Section I: Console Overview</a></p>
+<p>下一篇：<a href="post-245.html">SSL說明書導讀-Section II: Basic Routing and Signal Flow （下）混音與訊號輸出篇</a></p>
+<p><strong>編輯：P</strong></p>
+<p><strong>責任編輯：Hikari</strong></p>
+<p><strong>技術顧問： Ken、瞇瞇</strong></p>
+						</div>
+						<div class="mf-tags"><i class="icon-tag"></i> <span>SSL</span> <span>SSL 9000J</span> <span>SSL console</span> <span>強力錄音室</span> <span>類比控台</span></div>
+						<nav class="mf-post-nav"><a class="prev" href="post-285.html"><span>上一篇</span>「跳過別人的建議，做自己就對了」- 電音/舞曲製作人 Starr Chen 陳星翰 專訪</a><a class="next" href="post-317.html"><span>下一篇</span>聯合公園（Linkin Park）曾於強力錄音室進行創作？！</a></nav>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<footer id="footer" class="dark" style="background: url('../images/footer-bg.webp') repeat fixed; background-size: 100% 100%;">
+
+			<div class="container">
+
+				<!-- Footer Widgets
+				============================================= -->
+				<div class="footer-widgets-wrap clearfix">
+
+					<!--<div class="col_two_third">-->
+					<div class="container clearfix">
+
+						<div class="widget clearfix">
+
+							<img src="../images/MEGAlogo-footer.png" alt="" class="alignleft" style="margin-top: 8px; padding-right: 18px; border-right: 1px solid #4A4A4A;">
+
+							<p>強力錄音室創立於西元1991年。初期營業內容以錄音為主，對象為國內各家唱片公司。本錄音室有鑑於對錄音品質的要求，特別禮聘國外的一流錄音室設計者：Andy Munro 先生，擔綱新錄音室的設計工作。為了在台灣打造一座符合國際級的錄音及混音工作環境，也按照Munro先生所提出的指定（包含施工 所需要的建材/聆聽系統…等等），全力配合其需要。經過一年的施工，終於在1997年12月15日，執行新錄音室第一次的錄音，從此也開啟國內錄音工業重要的里程碑。</p>
+
+							<div class="line" style="margin: 30px 0;"></div>
+
+							<div class="col_half">
+								<div class="widget clearfix">
+
+									<div class="hidden-xs hidden-sm"><div class="clear" style="padding-top: 10px;"></div></div>
+
+									<div class="col-md-6 bottommargin-sm center">
+										<div class="counter counter-small" style="color: #35BBAA;"><span data-from="50" data-to="846000" data-refresh-interval="80" data-speed="3000" data-comma="true"></span></div>
+										<h5 class="nobottommargin">Total Working Hours</h5>
+									</div>
+
+									<div class="col-md-6 bottommargin-sm center col_last">
+										<div class="counter counter-small" style="color: #2CAACA;"><span data-from="100" data-to="7465" data-refresh-interval="50" data-speed="2000" data-comma="true"></span></div>
+										<h5 class="nobottommargin">Clients Served</h5>
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+					<!--<div class="col_one_third col_last">
+
+						<div class="widget clearfix">
+							<h4>Facebook</h4>
+							<div id="instagram-photos" class="instagram-photos masonry-thumbs col-5" data-user="269801886" data-count="10" data-type="tag">
+								<div class="fb-page" data-href="https://www.facebook.com/megaforcestudios/" data-tabs="timeline" data-width="250" data-height="250" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/megaforcestudios/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/megaforcestudios/">強力錄音室</a></blockquote>
+								</div>
+							</div>
+						</div>
+
+					</div>-->
+
+				</div><!-- .footer-widgets-wrap end -->
+
+			</div>
+
+			<!-- Copyrights
+			============================================= -->
+			<div id="copyrights">
+
+				<div class="container clearfix">
+
+					<div class="col_half">
+						<!--<div class="copyrights-menu copyright-links clearfix">
+							<a href="#">Home</a>/<a href="#">About</a>/<a href="#">Features</a>/<a href="#">Portfolio</a>/<a href="#">FAQs</a>/<a href="#">Contact</a>
+						</div>-->
+						Copyrights &copy; 2017 All Rights Reserved by Mega Force Co., Ltd.
+					</div>
+
+					<!--<div class="col_half col_last tright">
+						<div class="fright clearfix">
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-facebook">
+								<i class="icon-facebook"></i>
+								<i class="icon-facebook"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-twitter">
+								<i class="icon-"></i>
+								<i class="icon-twitter"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-gplus">
+								<i class="icon-gplus"></i>
+								<i class="icon-gplus"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-pinterest">
+								<i class="icon-pinterest"></i>
+								<i class="icon-pinterest"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-vimeo">
+								<i class="icon-vimeo"></i>
+								<i class="icon-vimeo"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-github">
+								<i class="icon-github"></i>
+								<i class="icon-github"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-yahoo">
+								<i class="icon-yahoo"></i>
+								<i class="icon-yahoo"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-linkedin">
+								<i class="icon-linkedin"></i>
+								<i class="icon-linkedin"></i>
+							</a>
+						</div>
+					</div>-->
+
+				</div>
+
+			</div><!-- #copyrights end -->
+
+		</footer><!-- #footer end -->
+
+	</div><!-- #wrapper end -->
+
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<script src="../js/megaforce.min.js"></script>
+	<script src="../js/blog.js"></script>
+</body>
+</html>

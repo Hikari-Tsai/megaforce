@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="zh-TW">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>SSL說明書導讀-Section III: The SL911 Input/Output Module(上) | 強力大磁鐵 MEGAFORCE</title>
+	<meta name="description" content="編輯前言 這個章節要介紹的是SSL非常重要的Strip，也就是輸入、動態、濾波、EQ、轉送、大小Fader等模" />
+	<meta property="og:site_name" content="MEGAFORCE 強力錄音室" />
+	<meta property="og:title" content="SSL說明書導讀-Section III: The SL911 Input/Output Module(上) | 強力大磁鐵 MEGAFORCE" />
+	<meta property="og:description" content="編輯前言 這個章節要介紹的是SSL非常重要的Strip，也就是輸入、動態、濾波、EQ、轉送、大小Fader等模" />
+	<meta property="og:type" content="article" />
+	<meta property="og:image" content="http://megaforce.audio/images/blog/2017/08/The-Small-Fader-and-Pan.webp" />
+	<meta property="og:url" content="http://megaforce.audio/blog/post-258.html" />
+	<link rel="canonical" href="http://megaforce.audio/blog/post-258.html" />
+	<link rel="Shortcut Icon" type="image/x-icon" href="../images/megaforce_icon.ico" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=Noto+Sans+TC:wght@300;400;500;700&amp;display=swap" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="../css/megaforce.min.css" type="text/css" />
+	<link rel="stylesheet" href="../css/blog.css" type="text/css" />
+	<!-- Facebook Pixel Code -->
+	<script>
+	!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+	n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+	document,'script','https://connect.facebook.net/en_US/fbevents.js');
+	fbq('init', '117336522215660'); // Insert your pixel ID here.
+	fbq('track', 'PageView');
+	</script>
+	<noscript><img height="1" width="1" style="display:none"
+	src="https://www.facebook.com/tr?id=117336522215660&ev=PageView&noscript=1"
+	/></noscript>
+	<!-- DO NOT MODIFY -->
+	<!-- End Facebook Pixel Code -->
+</head>
+<body class="stretched mf-blog">
+
+	<div id="wrapper" class="clearfix">
+
+		<header id="header" class="full-header">
+
+			<div id="header-wrap">
+
+				<div class="container clearfix">
+
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+					<!-- Logo
+					============================================= -->
+					<div id="logo">
+						<a href="../index.html" class="standard-logo" data-dark-logo="../images/MEGAlogo-dark.png"><img src="../images/MEGAlogo.png" alt="MEGA Logo"></a>
+						<a href="../index.html" class="retina-logo" data-dark-logo="../images/MEGAlogo-dark@2x.png"><img src="../images/MEGAlogo@2x.png" alt="MEGA Logo"></a>
+					</div><!-- #logo end -->
+
+					<!-- Primary Navigation
+					============================================= -->
+					<nav id="primary-menu">
+
+						<ul>
+							<li><a href="https://megaforcetraining.wixsite.com/website"><div>Megalogy</div></a></li>
+							<li><a href="../index.html"><div>Home</div></a></li>
+							<!--<li><a href="../index.html#section-about"><div>About</div></a></li>-->
+							<li><a href="../index.html#section-work"><div>Work</div></a></li>
+							<li><a href="../index.html#section-team"><div>Team</div></a></li>
+							<li><a href="../index.html#section-services"><div>Services</div></a></li>
+							<li><a href="../index.html#section-pricing"><div>Pricing</div></a></li>
+							<!--<li><a href="../index.html#section-testimonials"><div>Testimonials</div></a></li>-->
+							<li><a href="../index.html#section-contact"><div>Contact</div></a></li>
+							<li><a href="../equipment.html"><div>Equipment</div></a></li>
+							<li class="current"><a href="index.html"><div>Blog</div></a></li>
+						</ul>
+
+						<!-- Top Search
+						============================================= -->
+						<!--<div id="top-search">
+							<a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
+							<form action="search.html" method="get">
+								<input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
+							</form>
+						</div>-->
+						<!-- #top-search end -->
+
+
+					</nav><!-- #primary-menu end -->
+
+				</div>
+
+			</div>
+
+		</header><!-- #header end -->
+
+		<section id="page-title" class="mf-page-title">
+			<div class="container clearfix">
+				<a class="mf-back" href="index.html"><i class="icon-angle-left"></i> 強力大磁鐵 Blog</a>
+				<h1>SSL說明書導讀-Section III: The SL911 Input/Output Module(上)</h1>
+				<ul class="mf-meta"><li><i class="icon-calendar3"></i> <time datetime="2017-08-28">2017 年 8 月 28 日</time></li><li><i class="icon-user"></i> 萬磁王大磁鐵</li><li><i class="icon-folder-open"></i> <a href="index.html#cat-9">讀書會系列－SSL 類比控台</a></li></ul>
+			</div>
+		</section>
+
+		<section id="content">
+			<div class="content-wrap">
+				<div class="container clearfix">
+					<article class="mf-post">
+						<div class="mf-post-hero"><img src="../images/blog/2017/08/The-Small-Fader-and-Pan.webp" alt="SSL說明書導讀-Section III: The SL911 Input/Output Module(上)" width="372" height="1008" fetchpriority="high" decoding="async" /></div>
+						<div class="mf-post-body">
+<h2>編輯前言</h2>
+<p>這個章節要介紹的是SSL非常重要的Strip，也就是輸入、動態、濾波、EQ、轉送、大小Fader等模組介紹，就算你不是直接使用SSL控台，而是使用SSL的500系列、Wave SSL Strip、UAD SSL Strip等等軟體，在閱讀本章節後，也都會對於原理與特性有更進一步的了解。SSL公司經過數十年的發展，並聽取許多工程師的建議，不斷地改良本身的特性與操作介面(例如：動態區的壓縮器與門限器沒有設計Attack旋鈕；一個自動調變的滯後關門值設計等等)，最終成為混音師的神兵利器，相信對於大家的混音工作會有更多的幫助  by hikari</p>
+<hr />
+<p>I/O模組具有兩個完全獨立的訊號路徑。每個路徑擁有他自己的輸入與Fader。並且可藉由主控桌的Status區選擇狀態，來自動定義模組標準輸出路由。輸出路由可以在任何時間進行局部複寫，以提供更彈性的操作。</p>
+<p>兩個輸入分別是</p>
+<ul>
+<li>通道輸入(Channel Input)</li>
+<li>監聽輸入(Monitor Input)</li>
+</ul>
+<p>兩個Fader 分別是</p>
+<ul>
+<li>大Fader (Large Fader, LF)以及它的Pan</li>
+<li>小Fader (Small Fader, SF)以及它的Pan</li>
+</ul>
+<p>(PS: 大小Fader 並沒有直接對應通道輸入與監聽輸入，兩者是可以切換的)</p>
+<p>通道路徑的訊號來自於Mic /Line 輸入，而監聽路徑的訊號來自于Tape/Group輸入</p>
+<p>模組輸出包含：</p>
+<ul>
+<li>主立體聲匯流排(Main Stereo Bus, MIX))或是LCR Bus (不知道怎麼翻譯&#8230;，姑且翻成左中右匯流排吧)</li>
+<li>48軌路由矩陣(48-track Routing Matrix)</li>
+<li>4個立體聲次群組匯流排 (4 Stereo Subgroup Busses A, B, C and D)</li>
+<li>通道群組輸出 (Channel Group Output)</li>
+</ul>
+<p>任意一個Fader或是兩個Fader的訊號都是可以送到主立體聲匯流排</p>
+<p>任意一個Fader可以將訊號送給多軌路由矩陣以及次群組輸出或群組輸出</p>
+<p>在通道1-48中，群組輸出訊號也可以來自相對應的多軌混合匯流排(Multitrack mix bus)。</p>
+<p>多軌與立體聲次群組訊號也可以來自任何一個輔助發送控制器(Auxiliary Send Controls)並且允許額外的效果轉送或是產生Cue Mixes。</p>
+<p>EQ,、濾波器(指高低切)、輔助發送控制可以被切換到不同的訊號路徑上(指的是通道與監聽路經二選一)</p>
+<p>可以注意到，這裡有很多種可能的訊號路由排列組合，可以創造各種可能。這個章節將專注在各個獨立的控制模組以及簡單的訊號路由，關於訊號路由的部分，第二個Session有更多的說明。</p>
+<h2>Channel Input Section(通道輸入區)</h2>
+<p><img src="../images/blog/2017/08/螢幕快照-2017-08-09-下午12.26.41.webp" alt="" width="267" height="474" class="alignleft" loading="lazy" decoding="async" /></p>
+<p>通道輸入區接受三種訊號的輸入</p>
+<h4>LINE</h4>
+<p>從Patch D列所送入的訊號(由於是Half-Normal，所以在沒有接Patchbay的時候，訊號直接來自於C 也就是多軌盤帶機或是Pro Tools)，包含一個trim的旋鈕可以調整-20dB to 20dB，並擁有一個綠燈作為訊號指示。</p>
+<h4>MIC</h4>
+<p>從Patch B列所送入的訊號(由於是Full-Normal，所以在沒有接Patchbay的時候，訊號直接來自於A 也就是麥克風)，包含一個trim的旋鈕可以連續調整+15dB to 75dB的gain，且20dB pad可以衰減，使得增益範圍改成-5dB to +55dB，並有一個紅色指示燈顯示訊號輸入。</p>
+<h4>SUB GP</h4>
+<p>當SUB GP按鈕被按下的時候，上面所做的訊號選擇會被覆蓋(以這個為主的意思)，通道訊號將會來自於模組的多軌匯流混音放大器(multitrack bus mix amp)，這將允許模組1-48被用於聲音次群組(audio subgroups)</p>
+<h4>FLIP</h4>
+<p>在特定通道中反轉Mic/Line訊號來源 (反轉輸入源)</p>
+<h3 class="r">Φ</h3>
+<p>訊號反相輸入</p>
+<h4>48V</h4>
+<p>按下後提供48V幻象電壓供電</p>
+<h4>HIGH-Z</h4>
+<p>將麥克風輸入端的輸入阻抗從2K歐姆增加到8k歐姆，這將允許連接Line等級的輸出訊號到麥克風輸入(如果你需要的話)，並針對某些特殊的動圈式麥克風提供了可變的輸入阻抗。</p>
+<p>MIC以及Line 輸入將會依照你選擇的狀態(STATUS，在中控區)而自動切換。當狀態為RECORD或是REPLAY的時候，輸入為MIC。在混音模式，則輸入為LINE。當按下FLIP的時候，該獨立通道的輸入訊號源會被切換。如果按下了中控區的MASTER INPUT FLIP(在Status區域)則所有的通道輸入源都會被對調。</p>
+<h2>Dynamics Section (動態區)</h2>
+<p><img src="../images/blog/2017/08/螢幕快照-2017-08-09-下午7.53.51.webp" alt="" width="351" height="885" class="alignleft" loading="lazy" decoding="async" /></p>
+<p>動態區包含一個壓縮器(Compressor)/壓限器(Limiter)以及一個擴張器(Expander)/門限器(Gate)，他們使用相同的元素。兩個區域(指壓縮與擴張)是獨立運作的，但也可以同時運作，提供通道與監聽訊號更為複雜的操作功能。</p>
+<p>動態區具有三個路由按鈕可以關聯(Section4會有更詳細的解說)</p>
+<h4>MON</h4>
+<p>將動態區切換到監聽路徑內，如果EQ也在監聽路徑上的話則為Post-EQ</p>
+<h4>CH IN</h4>
+<p>將動態區切換到通道路徑內且為Pre EQ (編按：可以簡單理解為緊接在Channel input後面)</p>
+<h4>CH OUT</h4>
+<p>將動態區切換到通道路徑內且為Post EQ (編按：可以簡單理解為緊接在Channel output前面)</p>
+<p>如果CH IN (或CH OUT)與MON一起被按下，則動態區會切換到通道路徑內，但是動態的Side-Chain訊號則會來自於監聽路徑，更多細節請見Section4。</p>
+<p>如果希望觸發訊號來自於Insert Return(Patch F排)，可以按下插入區的KEY以及 IN，我們稍後會做詳細介紹。</p>
+<h3>壓縮器(Compressor)與壓限器(Limiter)</h3>
+<h4>RATIO (壓縮比)</h4>
+<p>壓縮比例。當開到1:1的時候是沒有作用的，順時鐘旋轉，則壓縮比例越來越多，當轉到底的時候，則變成一個壓限器。</p>
+<p>壓縮器具有一個Over-easy特性(編按：推測應該是指soft knee壓縮曲線)，但是你可以把RATIO旋鈕拉起來開啟Peak Sensing模式，它將會取代over-easy特性伴隨著hard knee壓縮曲線，提供一些特殊樂器的特殊用途，當開啟這個模式的時候，PK燈會亮起。</p>
+<h4>THRESHOLD(門檻值)</h4>
+<p>當訊號超過了這個控制器所設定的值，壓縮器將會開始工作並且依照壓縮比進行壓縮。這個控制器提供了自動化的Gain值(編按：所以SSL沒有Gain這個旋鈕，而是依照Threshold自動補償)，也就是說使用比較低的Threshold會自動增益輸出等級，這樣提供了一致又穩定的輸出Level。</p>
+<h4>Release (釋放速度)</h4>
+<p>用來設定當壓縮器要回到一般模式的時候，所需的時間(單位為秒)。此控制器也包含了一個拉起切換功能，當拉起時切換到Fast Attack Times，Attack固定為20dB削減/每30ms，當按下後則Attack回復成程序關聯模式(Program Dependent)，時間為3mS到30mS。</p>
+<p>右側的黃色與紅色LED表示被壓縮量</p>
+<h3>擴張器(Expander)與門限器(Gate)</h3>
+<p>這區可以藉由拉起HOLD旋鈕，將功能由∞:1的Gate切換成2:1的Expander，並且在拉起時會用紅色LED燈表示目前狀態。</p>
+<h4>RANGE</h4>
+<p>定義Expander/gate的工作區域(編按：就是從Threshold以下，有多少dB的動態範圍會被Gating/Expansion)。假如逆時鐘轉到底(0)，則不作用；假如順時鐘轉到底(40)，則提供了一個50dB的工作範圍(編按：我也不知道為什麼旋鈕寫40但是說明書說是50dB&#8230;.)。</p>
+<h4>THRESHOLD(門檻值)</h4>
+<p>可變的滯後(Hysteresis)被包括在Threshold電路中，對任何給定的開門設定(Open setting)，Expander/Gate將具有一個比較低的關門閥值。當Threshold下降時，這個滯後值會增加。這對於音樂錄音是非常有幫助的，它允許樂器低於開門閥值後才被Gating/Expansion衰減。（編按：就是說Threshold就是開門閥值，但是關門閥值會比較小，而且會隨著Threshold縮小而更小。）</p>
+<h4>RELEASE(釋放速度)</h4>
+<p>這定義了訊號低於Threshold的時候，訊號壓縮到目標Level速度，可以設定0.1-4秒。此控制器也包含了一個拉起切換功能，當拉起時切換到Fast Attack Tims，Attack固定為40dB/每100us，當壓下去的時候則為linear attack time，40dB/每1.5ms。Attack代表的是訊號高於Threshold後，訊號回復原始強度的時間。當被Gating的訊號具有非常陡峭的邊緣，如爵士鼓，那麼一個慢的Attack也許會屏蔽掉初始的重擊感(Thwack)，所以你必須選擇適當的Attack Time. （編按：就是建議你爵士鼓要拉起來了，需要注意這邊的Attack是指訊號回到原始強度的時間，也就是聲音出來的時間，跟壓縮器是剛好相反的)</p>
+<h4>HOLD (延時釋放)</h4>
+<p>定義當訊號低於Threshold值但是門還沒關閉的延遲時間，可從0調整到4秒。這個旋鈕具備一個拉起開關可以將Gate切換為Expander。</p>
+<p>綠色LED燈標示訊號被縮減的情況(編按：滿燈為完全關門，沒有燈為完全開門)</p>
+<h4>LINK</h4>
+<p>位於本區塊最上方的LINK按鈕可以將該單元的Side Chain訊號與右側的動態區Side Chain相連結。當兩個動態區被LINK的時候，控制電壓將會被加總(sum)，這使得兩個動態區會具備相同的動態縮減控制。</p>
+<p>注意！LINK兩個Gate並沒有辦法實現用一個訊號去打開另一個門，如果你真的需要用這個功能，有個簡單的方法可以做到，就是藉由Patching Insert並使用KEY的功能，我們稍後會解釋。</p>
+<p>注意！如果你並沒有開啟動態區的功能(按下MON/CH IN / CH OUT)任意一個，則Side Chain功能也會被Bypass</p>
+<h2>Filter and Parametric Equalizer Section (濾波器與參數等化器)</h2>
+<p><img src="../images/blog/2017/08/螢幕快照-2017-08-28-上午11.04.26.webp" alt="" width="267" height="1062" class="alignleft" loading="lazy" decoding="async" /></p>
+<p>這個區塊由四個EQ加上高低通濾波器所組成，濾波器與EQ都可以在模組內分別被路由到不同路徑。</p>
+<h3>Routing Buttons (路由按鈕)</h3>
+<p>在這個模組內具有四個路由按鈕，在下一章會有更多關於路由的細節，在此我們僅在底下做簡單介紹：</p>
+<h4>EQ IN</h4>
+<p>啟動此模組(EQ+Filter)到電路中。假如沒有其他開關被按下，則EQ會在通道路徑(Channel Path)而且後面接Filter，本切入開關是可以被電腦自動化，更多細節請參考電腦使用手冊。</p>
+<h4>DYN SC</h4>
+<p>將濾波器作用在動態模組的Side Chain上，EQ部分則是可以被獨立切換到通道或是監聽路徑。其中SYN SC按鈕可以覆寫SPLT功能。(編按：意思是可以把觸發動態的訊號先過Filter再以Side-Chain的方式送進動態區來觸發，但本身的訊號並沒有過Filter)</p>
+<h4>MON</h4>
+<p>將此模組以先過EQ再過Filter的方式切入監聽路徑。注意必須要有按下EQ IN否則這個功能沒有作用。如果動態區也被切到監聽路徑的話，此EQ+Filter模組會在動態之前。（編按：等同於通道路徑上的CH OUT+EQ IN)</p>
+<h4>SPLT</h4>
+<p>可以分離FILTER電路並將它直接放置於於通道輸入之後(編按：也就是訊號處理的第一站，比CH IN還前面)</p>
+<p>這允許Filter可以在錄音模式下，先在通道路徑處理被送到盤帶機的訊號，而僅在監聽路徑使用EQ。這也很常被使用在混音模式下，當額外的訊號經由小Fader送進Mix Bus時，Filter可以經由大Fader處理通道訊號，EQ則可以經由監聽輸入與小Fader處理訊號。</p>
+<p>(編按：E按鈕指的是E系列模式，將會在下文進行說明)</p>
+<h3>Parametric Equalizer (參數等化器)</h3>
+<p>EQ可以切換成兩種完全不同的特性曲線，分別是基於G系列EQ以及最後一版的E系列EQ。</p>
+<h4>HF Section (高頻區)</h4>
+<p>包含了一個擱架式濾波器(Shelving Filter)，並由一個可變截止頻率(Cut-off frequency)以及可增減音量的控制器所控制。我們可以藉由按下E按鈕將曲線切換為更為平滑的曲線(Shallower Curve)。按鈕BELL則是將曲線切換為鐘形曲線(編按：在此原文使用Peaking Curve)</p>
+<h4>HMF Section (中高頻)</h4>
+<p>一個連續可變的Q(fither width)、一個+/-20dB的增益以及一個中心頻率為600Hz-7kHz的控制旋鈕</p>
+<h4>LMF Section (中低頻)</h4>
+<p>一個連續可變的Q(fither width)、一個+/-20dB的增益以及一個中心頻率為200Hz-2.5kHz的控制旋鈕</p>
+<p>在一般的使用情況下（編按：指G系列模式)，EQ的中高頻與中低頻頻帶(Band)具有連續可變的Q(編按：原文Bandwith，但是參考下一句，認為本句應該是指Q)，它是被定義為Gain/BandWidth (編按：品質因子一般定義為最高能量/衰減3dB的頻寬)，因此Gain會隨著頻寬增加而被減少(？)</p>
+<p>當EQ切換到E系列模式下(按下E)，則在任何Gain的情況下頻寬都是常數，因此當固定Q值時，較低的Gain他的EQ曲線會較狹窄。</p>
+<h4>LF Section (低頻區)</h4>
+<p>包含了一個擱架式濾波器(Shelving Filter)，並由一個可變截止頻率(Cut-off frequency)以及可增減音量的控制器所控制。我們可以藉由按下E按鈕將曲線切換為更為平滑的曲線(Shallower Curve)。按鈕BELL則是將曲線切換為鐘形曲線(編按：在此原文使用Peaking Curve)</p>
+<h4>Filter (濾波器)</h4>
+<p>我們可藉由旋轉到底而完整的Bypass濾波器，也就是切到Out的位置。</p>
+<p>高通濾波器斜率為18dB/每倍頻，低通濾波器則為12dB/每倍頻。</p>
+<h3>Overload Indicator (過載指示器)</h3>
+<p>過載電路於三個不同的位置監控通道路徑的訊號大小。我們可以從中央控制區調整過載燈亮起的門檻值，調整範圍為+18dBua到+24dBu(每個Step為1dB)，這三個監控點分別為：前通道Fader,後insert點以及通道輸入點(訊號尚未處理時)</p>
+<h3>Insert Point(插入點)</h3>
+<p>插入點可以設定為EQ前、EQ後或是並且在Fader前，Patchbay Row E總是程載訊號，並且經由內部Return回RowF。IN開關的功用是允許RowF的訊號進入訊號路徑，因此任何設備都是可以接上Row E,F 並且藉由開關控制。</p>
+<p>IN開關可以被自電腦動化控制，相關說明請參考電腦使用手冊。</p>
+<p>Insert Return可以被用於動態區的key輸入。我們也可以藉由KEY開關重新路由訊號並送到動態處理器的Side-Chain輸入部分，相關細節可以看看本文上面的動態模組部分。</p>
+<h3>Auxiliary Sends(輔助轉送)</h3>
+<p><img src="../images/blog/2017/08/螢幕快照-2017-08-28-上午11.05.34.webp" alt="" width="243" height="826" class="alignleft" loading="lazy" decoding="async" /></p>
+<p>這個區塊由一個立體聲以及六個單聲道轉送(SEND)所構成，任一個聲音路徑都可以藉由各模組的大小Fader所控制並且被路由到任意的轉送Pre/Post Fader訊號到匯流排。</p>
+<p>每個轉送模組帶有一個可控制Level，且可以藉由下壓達到開啟/關閉的旋鈕，因此我們很容易切換並使用預設轉送量，此開關可以被電腦自動化控制並由電子方式鎖定。一個黃色的LED燈標示轉送是否被開啟。而立體聲轉送則多包括了一個PAN控制。</p>
+<p>來源選擇開關有以下選擇：</p>
+<h4>SF(小Fader)</h4>
+<p>當按鈕被按下後，訊號來自於小Fader的訊號路由，若SF按鈕沒按則訊號來自於大Fader訊號路由。</p>
+<h4>PRE</h4>
+<p>4個按鈕位於區塊下方，允許輔助發送訊號成對切換成Pre-Fader，也就是說當按鈕按下後，訊號為Pre-Fader，若沒按則是Post-Fader。</p>
+<h4>EFX</h4>
+<p>每個輔助發送控制器可以藉由EFX按鈕，將自己的匯流排斷開連結並重新路由到ABCD任何一個立體聲匯流排、多軌匯流排或是直送通道輸出。在偶數輔助發送軌道(FX2, FX4, FX6)按下EFX按鈕則會路由發送訊號到EFX EVEN匯流排，並用一個綠燈標示該訊號路由已經作用。同理，在奇數輔助發送軌道(FX1, FX3, FX5)按下EFX按鈕則會路由發送訊號到EFX ODD匯流排，並用一個紅燈標示該訊號路由已經作用。而在Cue ST軌道上按下EFX按鈕，則會將左聲道送到EFX ODD匯流排，右聲道送到EFX EVEN匯流排。只有一個輔助發送可以被指派到EFX匯流排，也就是說，最多只能有一個數量的odd匯流排以及一個even匯流排，或是一組CueST被指派到EFX匯流排。編號較小的轉送軌優先度會高於較大編號的轉送軌，而Cue ST軌則是高於所有Mono軌道。(編按：也就是說如果你一次按下了多個EFX按鈕，則會以比較上面的為主，下面會自動被Cut掉，EFX Bus就是只能乘載一個Odd以及一個Even訊號)。</p>
+<p>此特徵允許在不經過小fader的情況下，允許一個大數量的獨立耳機監聽或是效果發送混音被產生。</p>
+<p>所有的輔助轉送輸出可輸出至jack field並且被使用或是送到效果單元。在第五章我們會談論更多的</p>
+<div title="Page 64">
+<div>
+<div>
+<div>
+<p>Foldback以及 Studio Loudspeaker 系統。</p>
+</div>
+</div>
+</div>
+</div>
+<p>責任編輯：Hikari</p>
+<p>技術顧問：Ken, 眯眯</p>
+<p><span>本說明書版權歸Solid State Logic, Oxford, England所有，中文化僅供技術交流與強力錄音室內部使用，禁止用於商業用途。</span></p>
+<p>PDF版本：<a href="../files/blog/SL9000J-中文版III-i.pdf" target="_blank" rel="noopener">點我下載</a></p>
+<p>上篇：<a href="post-245.html">SSL說明書導讀-Section II: Basic Routing and Signal Flow （下）混音與訊號輸出篇</a></p>
+<p>下篇：<a href="post-486.html">SSL說明書導讀-Section III: The SL911 Input/Output Module(下)</a></p>
+						</div>
+						<div class="mf-tags"><i class="icon-tag"></i> <span>SSL</span> <span>SSL 9000J</span> <span>SSL console</span> <span>強力錄音室</span> <span>類比控台</span></div>
+						<nav class="mf-post-nav"><a class="prev" href="post-439.html"><span>上一篇</span>強力穿新衣</a><a class="next" href="post-471.html"><span>下一篇</span>[ 當音樂製作成為每天的工作，更要記得最初玩音樂那單純、真實的感受 ]  &#8211; 嘻哈/舞曲音樂製作人 梯依恩 TeN 專訪</a></nav>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<footer id="footer" class="dark" style="background: url('../images/footer-bg.webp') repeat fixed; background-size: 100% 100%;">
+
+			<div class="container">
+
+				<!-- Footer Widgets
+				============================================= -->
+				<div class="footer-widgets-wrap clearfix">
+
+					<!--<div class="col_two_third">-->
+					<div class="container clearfix">
+
+						<div class="widget clearfix">
+
+							<img src="../images/MEGAlogo-footer.png" alt="" class="alignleft" style="margin-top: 8px; padding-right: 18px; border-right: 1px solid #4A4A4A;">
+
+							<p>強力錄音室創立於西元1991年。初期營業內容以錄音為主，對象為國內各家唱片公司。本錄音室有鑑於對錄音品質的要求，特別禮聘國外的一流錄音室設計者：Andy Munro 先生，擔綱新錄音室的設計工作。為了在台灣打造一座符合國際級的錄音及混音工作環境，也按照Munro先生所提出的指定（包含施工 所需要的建材/聆聽系統…等等），全力配合其需要。經過一年的施工，終於在1997年12月15日，執行新錄音室第一次的錄音，從此也開啟國內錄音工業重要的里程碑。</p>
+
+							<div class="line" style="margin: 30px 0;"></div>
+
+							<div class="col_half">
+								<div class="widget clearfix">
+
+									<div class="hidden-xs hidden-sm"><div class="clear" style="padding-top: 10px;"></div></div>
+
+									<div class="col-md-6 bottommargin-sm center">
+										<div class="counter counter-small" style="color: #35BBAA;"><span data-from="50" data-to="846000" data-refresh-interval="80" data-speed="3000" data-comma="true"></span></div>
+										<h5 class="nobottommargin">Total Working Hours</h5>
+									</div>
+
+									<div class="col-md-6 bottommargin-sm center col_last">
+										<div class="counter counter-small" style="color: #2CAACA;"><span data-from="100" data-to="7465" data-refresh-interval="50" data-speed="2000" data-comma="true"></span></div>
+										<h5 class="nobottommargin">Clients Served</h5>
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+					<!--<div class="col_one_third col_last">
+
+						<div class="widget clearfix">
+							<h4>Facebook</h4>
+							<div id="instagram-photos" class="instagram-photos masonry-thumbs col-5" data-user="269801886" data-count="10" data-type="tag">
+								<div class="fb-page" data-href="https://www.facebook.com/megaforcestudios/" data-tabs="timeline" data-width="250" data-height="250" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/megaforcestudios/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/megaforcestudios/">強力錄音室</a></blockquote>
+								</div>
+							</div>
+						</div>
+
+					</div>-->
+
+				</div><!-- .footer-widgets-wrap end -->
+
+			</div>
+
+			<!-- Copyrights
+			============================================= -->
+			<div id="copyrights">
+
+				<div class="container clearfix">
+
+					<div class="col_half">
+						<!--<div class="copyrights-menu copyright-links clearfix">
+							<a href="#">Home</a>/<a href="#">About</a>/<a href="#">Features</a>/<a href="#">Portfolio</a>/<a href="#">FAQs</a>/<a href="#">Contact</a>
+						</div>-->
+						Copyrights &copy; 2017 All Rights Reserved by Mega Force Co., Ltd.
+					</div>
+
+					<!--<div class="col_half col_last tright">
+						<div class="fright clearfix">
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-facebook">
+								<i class="icon-facebook"></i>
+								<i class="icon-facebook"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-twitter">
+								<i class="icon-"></i>
+								<i class="icon-twitter"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-gplus">
+								<i class="icon-gplus"></i>
+								<i class="icon-gplus"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-pinterest">
+								<i class="icon-pinterest"></i>
+								<i class="icon-pinterest"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-vimeo">
+								<i class="icon-vimeo"></i>
+								<i class="icon-vimeo"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-github">
+								<i class="icon-github"></i>
+								<i class="icon-github"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-yahoo">
+								<i class="icon-yahoo"></i>
+								<i class="icon-yahoo"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-linkedin">
+								<i class="icon-linkedin"></i>
+								<i class="icon-linkedin"></i>
+							</a>
+						</div>
+					</div>-->
+
+				</div>
+
+			</div><!-- #copyrights end -->
+
+		</footer><!-- #footer end -->
+
+	</div><!-- #wrapper end -->
+
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<script src="../js/megaforce.min.js"></script>
+	<script src="../js/blog.js"></script>
+</body>
+</html>
