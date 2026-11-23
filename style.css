@@ -13622,3 +13622,6 @@ body:not(.no-transition) #wrapper,
 	padding:0!important
 }
 
+
+/* Works grid: one-line captions so masonry keeps year order */
+.grid .portfolio-desc h3,.grid .portfolio-desc span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
